@@ -5,7 +5,9 @@ const model = new ChatOpenAI({
   model: "o1-all",
 });
 
-const stream = await model.stream("Hello! Tell me about yourself.");
+const stream = await model.stream(`
+Hello! Tell me about yourself.
+`);
 
 const chunks = [];
 
