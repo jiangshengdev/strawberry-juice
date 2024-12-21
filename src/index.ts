@@ -2,8 +2,7 @@ import "dotenv/config";
 import { ChatOpenAI } from "@langchain/openai";
 
 const model = new ChatOpenAI({
-  model: "gpt-4o-mini",
-  temperature: 0,
+  model: "o1-all",
 });
 
 const stream = await model.stream("Hello! Tell me about yourself.");

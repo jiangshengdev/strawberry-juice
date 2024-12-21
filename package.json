@@ -13,7 +13,9 @@
   "license": "MIT",
   "dependencies": {
     "@langchain/openai": "^0.3.16",
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "langsmith": "^0.2.13",
+    "openai": "^4.77.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
