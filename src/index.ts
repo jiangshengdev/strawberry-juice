@@ -13,5 +13,5 @@ const chunks = [];
 
 for await (const chunk of stream) {
   chunks.push(chunk);
-  console.log(`${chunk.content}|`);
+  console.log(`${chunk.content}`);
 }
