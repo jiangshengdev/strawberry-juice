@@ -1,6 +1,7 @@
 import "dotenv/config";
 import { ChatOpenAI } from "@langchain/openai";
-import fs from "fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
+import { stdout } from "node:process";
 
 const model = new ChatOpenAI({
   model: "o1-all",
@@ -14,9 +15,9 @@ const chunks = [];
 
 for await (const chunk of stream) {
   chunks.push(chunk);
-  console.log(`${chunk.content}`);
+  stdout.write(`${chunk.content}`);
 }
 
 const result = chunks.map((chunk) => chunk.content).join("");
-await fs.mkdir("./dist", { recursive: true });
-await fs.writeFile("./dist/output.md", result);
+await mkdir("./dist", { recursive: true });
+await writeFile("./dist/output.md", result);
