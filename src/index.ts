@@ -15,7 +15,7 @@ const chunks = [];
 
 for await (const chunk of stream) {
   chunks.push(chunk);
-  stdout.write(`${chunk.content}`);
+  stdout.write(chunk.content.toString());
 }
 
 const result = chunks.map((chunk) => chunk.content).join("");
